@@ -23,15 +23,15 @@ const states = ['In Room', 'In Bed', 'In Room', 'Out Of Room'];
 
 function getRoomState() {
     return {
-        room1: {
+        'room 1': {
             state: states[(i + 0) % 4],
             timestampMs: Date.now(),
         },
-        room2: {
+        'room 2': {
             state: states[(i + 1) % 4],
             timestampMs: Date.now(),
         },
-        room3: {
+        'room 3': {
             state: states[(i + 2) % 4],
             timestampMs: Date.now(),
         },
