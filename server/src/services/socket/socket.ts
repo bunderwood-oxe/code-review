@@ -10,7 +10,8 @@ const init = (app: http.Server): socket => {
         serveClient: false,
     });
 
-    // begin code challenge actions
+// *****************************************
+// begin code challenge actions - DO NOT EDIT
     setInterval(() => socketServer.emit('roomState', getRoomState()), 1000);
     setInterval(() => i++, 5000);
     return socketServer;
@@ -36,5 +37,7 @@ function getRoomState() {
         },
     };
 }
+// end code challenge actions - DO NOT EDIT
+// **************************************
 
 export default init;
