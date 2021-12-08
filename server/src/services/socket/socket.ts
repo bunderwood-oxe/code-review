@@ -13,7 +13,7 @@ const init = (app: http.Server): socket => {
 // *****************************************
 // begin code challenge actions - DO NOT EDIT
     setInterval(() => socketServer.emit('roomState', getRoomState()), 1000);
-    setInterval(() => i++, 5000);
+    setInterval(() => i++, 8000);
     return socketServer;
 };
 

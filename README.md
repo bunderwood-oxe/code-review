@@ -29,5 +29,9 @@ Rules
 1. The data stored in Redux slice `roomStates` represents live `Room` data and does not need to be persisted.
 2. The data stored in SQLite and made available through the API does need to be persisted.
 3. Dismissed toast notifications using the API data source should not re-appear between page refreshes.
+4. Only the room state `Out Of Room` should be rendered as a Toast Notification. It should be automatically
+   removed once the room is no longer in that state
 
-You are free to make any changes to meet the goals outlined above including but not limited to;  the database schema, API, Redux store etc
+
+You are free to make any changes to meet the goals outlined above including but not limited to;  
+the database schema, API, Redux store etc
