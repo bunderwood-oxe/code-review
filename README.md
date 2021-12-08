@@ -6,7 +6,7 @@
 npm install
 ```
 
-  Start the server, client and mock_systems.js script:
+  Start the Node.js Express server and React client
 
 ```bash
 npm start
@@ -17,17 +17,15 @@ npm start
 This sample app is made up of:
 
 1. A React client with Redux (using redux-toolkit- <https://redux-toolkit.js.org/>) `./client/`
-2. An Express server with Typescript `./server/`
-3. A mock tool to simulate external input from two systems. `./tools/mock_systems.js`. This outputs ZMQ messages on your localhost through the following ports (intended for use in a pub/sub zeromq implementation):
-  "System A": 20001,
-  "System B": 20002
+2. An Express server with Typescript `./server/` using an SQLite database via `knex`https://knexjs.org/>
 
-Please extend this service to consume and synchronise the messages for "System A" and "System B" produced by `./tools/mock_systems`. Then send the synchronised data to the React Front-end and display in realtime to the user
+Please extend this app, using an NPM library of your choice to display the data made available in the Redux store and through the API endpoint `/api/v1/notification` as Toast Notifications that can be dismissed permanently
 
-- "System A" is the primary system and no ZMQ messages should be skipped or discarded
-- "System B" is the secondary system and provides additional - non critical information
-- Messages should be synchronised based on their timestamps being equal
-- Messages between "System A" and "System B" may be received out of order and with a delay
-- We should wait no longer than 800 milliseconds before abandoning an attempt to synchronise the data before returning just the current message from "System A"
+Rules
 
-To get started follow the steps in Usage above
+1. The data stored in Redux represents live `Room` data and does not need to be persisted.
+2. The data stored in SQLite and made available through the API does need to be persisted.
+3. Dismissed toast notifications using the API data source should not re-appear between page refreshes.
+
+You are free to make any changes to meet the goals outlined above including but not limited to;  the database schema, API, Redux store etc
+

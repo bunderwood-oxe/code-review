@@ -1,3 +1,4 @@
+import socket from './socket/socket';
 import logger from './logger/logger';
 
-export { logger };
+export { socket, logger };

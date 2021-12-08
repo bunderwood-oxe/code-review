@@ -6,3 +6,5 @@ test/coverage
 
 client/build
 server/build
+
+*.sqlite3

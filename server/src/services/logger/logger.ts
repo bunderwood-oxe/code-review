@@ -31,7 +31,8 @@ const setLogConfig = (config: typeof options): boolean => {
         }
         return true;
     } catch (e) {
-        console.log('Error configuring logger service ' + JSON.stringify(e.message));
+        if (e instanceof Error) console.log('Error configuring logger service ' + JSON.stringify(e.message));
+        else console.log('Error configuring logger service');
         return false;
     }
 };

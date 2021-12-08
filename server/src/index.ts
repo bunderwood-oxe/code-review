@@ -1,3 +1,6 @@
+import boot from './boot';
 import { startServer } from './server';
 
-startServer();
+boot().then(() => {
+    startServer();
+});

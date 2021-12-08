@@ -1,5 +1,8 @@
 import { logger } from '../services';
+
 import heartbeat from './heartbeat';
+import notification from './notification';
+
 import express from 'express';
 
 import type { Request, Response, NextFunction } from 'express';
@@ -8,6 +11,7 @@ import type { HttpException } from '../utils';
 const router = express.Router();
 
 router.use('/', heartbeat);
+router.use('/', notification);
 
 router.use(function (err: HttpException, req: Request, res: Response, next: NextFunction) {
     // global error handler

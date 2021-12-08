@@ -2,7 +2,7 @@ import express from 'express';
 import routes from './routes';
 import cors from 'cors';
 
-import { logger } from './services';
+import { socket, logger } from './services';
 
 import type { Server } from 'http';
 
@@ -15,6 +15,9 @@ function startServer(): Server {
     const server = app.listen({ port: PORT }, () => {
         logger.info(`Express Server is now running on http://${HOST}:${PORT}`);
     });
+
+    socket(server);
+
     return server;
 }
 

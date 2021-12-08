@@ -32,11 +32,11 @@
     "skipLibCheck": true,
     "noFallthroughCasesInSwitch": true,
     "isolatedModules": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
   },
   "include": [
     "__mocks__/**/*.ts",
-    "server/src/**/*.ts",
+    "server/**/*.ts",
     "test/**/*.ts"
   ],
   "exclude": [

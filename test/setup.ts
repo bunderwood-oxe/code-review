@@ -1,9 +1,11 @@
+import boot from '../server/src/boot';
 import { startServer } from '../server/src/server';
 import { CustomNodeJsGlobal } from '../server/types/supertest';
 
 declare const global: CustomNodeJsGlobal;
 
 async function setup() {
+    await boot();
     const server = startServer();
     console.log('\nTest setup: Started the server.\n');
 
