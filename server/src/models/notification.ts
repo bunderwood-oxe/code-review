@@ -7,7 +7,6 @@ export interface Notification {
     typeId: number;
     subject: string;
     body: string;
-    dismissed?: boolean;
     reminderMinutes?: number;
     updated_at: number;
 }
@@ -58,7 +57,6 @@ const notificationModel = {
                     // knex update skips undefined values
                     subject: updates.subject,
                     body: updates.body,
-                    dismissed: updates.dismissed,
                     reminderMinutes: updates.reminderMinutes,
                     updated_at: moment().valueOf(),
                 });

@@ -6,7 +6,6 @@ export async function up(knex: Knex): Promise<Knex.SchemaBuilder> {
         table.integer('typeId').notNullable();
         table.string('subject');
         table.string('body');
-        table.boolean('dismissed').defaultTo(0);
         table.integer('reminderMinutes');
         table.integer('updated_at').notNullable();
         table.foreign('typeId').references('notification_type.id');
